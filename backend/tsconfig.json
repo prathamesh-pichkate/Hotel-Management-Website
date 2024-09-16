@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "moduleResolution": "node", // Add Node.js module resolution
+    "resolveJsonModule": true, // Allow importing JSON files
+    "sourceMap": true, // Enable source maps for debugging
+    "declaration": true // Generate .d.ts files
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist"]
+}

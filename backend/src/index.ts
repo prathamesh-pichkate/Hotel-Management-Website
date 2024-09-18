@@ -19,8 +19,7 @@ mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
   .then(() => {
     console.log(
-      "mongodb connected successfully! ",
-      process.env.MONGODB_CONNECTION_STRING as string
+      "mongodb connected successfully!"
     );
   })
   .catch((err) => console.log("Mongodb connection error!"));

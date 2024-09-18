@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./layouts/Layout.tsx";
 import Register from "./pages/Register.tsx";
 import SignIn from "./pages/SignIn.tsx";
+import AddHotel from "./pages/AddHotel.tsx";
+import { useAppContext } from "./contexts/AppContext.tsx";
 
 function App() {
+  const { isLoggedIn } = useAppContext();
   return (
     <Router>
       <Routes>
@@ -40,6 +43,17 @@ function App() {
             </Layout>
           }
         />
+
+        {isLoggedIn && (
+          <Route
+            path="/add-hotel"
+            element={
+              <Layout>
+                <AddHotel />
+              </Layout>
+            }
+          />
+        )}
       </Routes>
     </Router>
   );

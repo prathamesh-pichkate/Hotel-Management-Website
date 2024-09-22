@@ -5,6 +5,7 @@ import Register from "./pages/Register.tsx";
 import SignIn from "./pages/SignIn.tsx";
 import AddHotel from "./pages/AddHotel.tsx";
 import { useAppContext } from "./contexts/AppContext.tsx";
+import MyHotels from "./pages/MyHotels.tsx";
 
 function App() {
   const { isLoggedIn } = useAppContext();
@@ -45,14 +46,24 @@ function App() {
         />
 
         {isLoggedIn && (
-          <Route
-            path="/add-hotel"
-            element={
-              <Layout>
-                <AddHotel />
-              </Layout>
-            }
-          />
+          <>
+            <Route
+              path="/add-hotel"
+              element={
+                <Layout>
+                  <AddHotel />
+                </Layout>
+              }
+            />
+            <Route
+              path="/my-hotels"
+              element={
+                <Layout>
+                  <MyHotels />
+                </Layout>
+              }
+            />
+          </>
         )}
       </Routes>
     </Router>
